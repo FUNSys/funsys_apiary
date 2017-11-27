@@ -14,41 +14,38 @@ Polls is a simple API allowing consumers to view polls and vote in them.
             {
                 "lecture_id": 1,
                 "disp_lecture": "函館未来学",
-                "must": "true",
+                "must": 1,
                 "week": 1,
                 "jigen": 1,
                 "teachers": [
-                    1010001,
-                    1010002,
-                    1010003
+                    1,
+                    2
                 ],
                 "rooms": [
-                    1345,
-                    1123
+                    1,
+                    2
                 ],
                 "classes": [
-                    11,
-                    12,
-                    13,
-                    14
+                    101,
+                    212,
+                    306
                 ]
             },
             {
                 "lecture_id": 2,
                 "disp_lecture": "情報アーキテクチャ演習",
-                "must": "true",
-                "week": 1,
-                "jigen": 1,
+                "must": 5,
+                "week": 2,
+                "jigen": 2,
                 "teachers": [
-                    1010003,
-                    1010004
+                    1,
+                    2
                 ],
                 "rooms": [
-                    0791
+                    1
                 ],
                 "classes": [
-                    32,
-                    34
+                    101
                 ]
             }
         ]
@@ -63,23 +60,21 @@ Polls is a simple API allowing consumers to view polls and vote in them.
         {
             "lecture_id": 1,
             "disp_lecture": "函館未来学",
-            "must": "true",
+            "must": 1,
             "week": 1,
             "jigen": 1,
             "teachers": [
-                1010001,
-                1010002,
-                1010003
+                1,
+                2
             ],
             "rooms": [
-                1345,
-                1123
+                1,
+                2
             ],
             "classes": [
-                11,
-                12,
-                13,
-                14
+                101,
+                212,
+                306
             ]
         }
         
@@ -91,22 +86,19 @@ Polls is a simple API allowing consumers to view polls and vote in them.
 
         [
             {
-                "class_id": 11,
-                "year": 1,
-                "kumi": "A",
-                "course": 0
+                "class_id": 101,
+                "disp_class": "1A"
+                "course": 0 
             },
             {
-                "class_id": 12,
-                "year": 1,
-                "kumi": "B",
-                "course": 0
+                "class_id": 212,
+                "disp_class": "2L"
+                "course": 4 
             },
-                        {
-                "class_id": 21,
-                "year": 2,
-                "kumi": "A",
-                "course": 1
+            {
+                "class_id": 306,
+                "disp_class": "3F"
+                "course": 2 
             }
         ]
         
@@ -117,10 +109,9 @@ Polls is a simple API allowing consumers to view polls and vote in them.
 + Response 200 (application/json)
 
         {
-            "class_id": 11,
-            "year": 1,
-            "kumi": "A",
-            "course": 0
+                "class_id": 101,
+                "disp_class": "1A"
+                "course": 0 
         }
 
 ## Teachers Collection [/teachers]
@@ -131,16 +122,20 @@ Polls is a simple API allowing consumers to view polls and vote in them.
 
         [
             {
-                "teacher_id": 1234,
+                "teacher_id": 1,
                 "disp_teacher": "函館太郎",
+                "roma_name": "taro hakdoate"
+                "position": "准教授"
                 "research_area": "認知科学",
-                "course": 1
+                "role": "メタ学習ラボ"
             },
             {
-                "teacher_id": 5678,
-                "disp_teacher": "未来次郎",
-                "research_area": "ソフトウェア工学",
-                "course": 3
+                "teacher_id": 2,
+                "disp_teacher": "函館花子",
+                "roma_name": "hanako hakdoate"
+                "position": "教授"
+                "research_area": "システム工学",
+                "role": "情報アーキテクチャ"
             }
         ]
                 
@@ -151,10 +146,12 @@ Polls is a simple API allowing consumers to view polls and vote in them.
 + Response 200 (application/json)
 
         {
-            "teacher_id": 1234,
+            "teacher_id": 1,
             "disp_teacher": "函館太郎",
+            "roma_name": "taro hakdoate"
+            "position": "准教授"
             "research_area": "認知科学",
-            "course": 1
+            "role": "情報アーキテクチャ"
         }
         
 ## Rooms Collection [/rooms]
@@ -165,15 +162,15 @@ Polls is a simple API allowing consumers to view polls and vote in them.
 
         [
             {
-                "room_id": 1234,
+                "room_id": 1,
                 "disp_room": "アトリエ",
             },
             {
-                "room_id": 5678,
+                "room_id": 2,
                 "disp_room": "R791",
             },
             {
-                "room_id": 9012,
+                "room_id": 3,
                 "disp_room": "大講義室",
             }
         ]
@@ -185,6 +182,6 @@ Polls is a simple API allowing consumers to view polls and vote in them.
 + Response 200 (application/json)
 
         {
-            "room_id": 1234,
+            "room_id": 1,
             "disp_room": "アトリエ",
         }
